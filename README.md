@@ -1,6 +1,7 @@
 # sýnesis&trade; Lite for Syslog
 sýnesis&trade; Lite for Syslog provides basic log analytics for syslog messages using Elastic Stack.
 
+![synesis_lite_syslog](https://user-images.githubusercontent.com/10326954/34677300-f7b4a946-f48f-11e7-882a-b35f2c5e29dd.png)
 ## Getting Started
 sýnesis&trade; Lite for Syslog was developed using Elastic Stack 6.1.1, including Elasticsearch, Logstash and Kibana. Currently there is no specific configuration required for Elasticsearch. As long as Kibana and Logstash can talk to your Elasticsearch cluster you should be ready to go.
 
