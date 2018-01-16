@@ -23,7 +23,7 @@ Using the multiple pipeline feature introduced in Logstash 6.0 add the pipeline 
 ```
 Alternatively you can start Logstash using the `--path.config` option to specify the location of the `synesis_lite_syslog/conf.d` directory.
 
-Rather than edit the pipeline files in `synesis_lite_syslog/conf.d` for your environment, environment variables can be used. The supported environment variables are:
+Rather than edit the pipeline files in `synesis_lite_syslog/conf.d` for your environment, environment variables can be used. Files are included for `/etc/profile.d` and `/etc/systemd/system/logstash.service.d`, which you may find provide a helpful start to setting up the environment variables. The supported environment variables are:
 
 Environment Variable | Description | Default Valaue
 --- | --- | ---

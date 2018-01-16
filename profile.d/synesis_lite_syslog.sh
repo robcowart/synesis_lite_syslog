@@ -1,0 +1,17 @@
+# synesis Lite - Syslog 
+export SYNLITE_SYSLOG_TEMPLATE_PATH=/etc/logstash/synesis_lite_syslog/templates
+export SYNLITE_SYSLOG_GROK_PATTERNS_DIR=/etc/logstash/synesis_lite_syslog/patterns
+
+export SYNLITE_SYSLOG_RESOLVE_IP2HOST=true
+export SYNLITE_SYSLOG_NAMESERVER=127.0.0.1
+
+export SYNLITE_SYSLOG_ES_HOSTS=127.0.0.1:9200
+export SYNLITE_SYSLOG_ES_USER=elastic
+export SYNLITE_SYSLOG_ES_PASSWORD=changeme
+
+export SYNLITE_SYSLOG_TCP_HOST=0.0.0.0
+export SYNLITE_SYSLOG_TCP_PORT=514
+export SYNLITE_SYSLOG_UDP_HOST=0.0.0.0
+export SYNLITE_SYSLOG_UDP_PORT=514
+export SYNLITE_SYSLOG_MSG_TIMESTAMP=true
+export SYNLITE_SYSLOG_TZ=UTC
