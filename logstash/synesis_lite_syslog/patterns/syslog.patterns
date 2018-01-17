@@ -3,8 +3,8 @@
 #   <14>
 KOIOSSYSLOGPRIORITY (?:<%{NONNEGINT:syslog_pri}>\s*)?
 
-# Looks for multiple possible timestamp formats commonly used for syslog messages.
-KOIOSSYSLOGTIMESTAMP (?:%{TIMESTAMP_ISO8601:[@metadata][syslog_timestamp]}|%{KOIOSTIMESTAMP1:[@metadata][syslog_timestamp]}|%{KOIOSTIMESTAMP2:[@metadata][syslog_timestamp]})\s+
+# Looks for multiple possible timestamp formats commonly used for syslog messages. ORDER IS IMPORTANT HERE!
+KOIOSSYSLOGTIMESTAMP (?:%{KOIOSTIMESTAMP:[@metadata][syslog_timestamp]}|%{TIMESTAMP_ISO8601:[@metadata][syslog_timestamp]})\s+
 
 # Syslog facility and severity
 # Examples:
