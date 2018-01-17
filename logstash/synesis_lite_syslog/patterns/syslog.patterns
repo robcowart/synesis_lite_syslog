@@ -4,6 +4,12 @@
 KOIOSSYSLOGPRIORITY (?:<%{NONNEGINT:syslog_pri}>\s*)?
 
 # Looks for multiple possible timestamp formats commonly used for syslog messages. ORDER IS IMPORTANT HERE!
+# Examples:
+#   Dec  9 01:23:06   
+#   Sep 30 2015 16:27:37
+#   Jan 15 18:52:50 2017
+#   2016-05-08 20:56:48.117099
+#   2018-01-17T15:21:00Z
 KOIOSSYSLOGTIMESTAMP (?:%{KOIOSTIMESTAMP:[@metadata][syslog_timestamp]}|%{TIMESTAMP_ISO8601:[@metadata][syslog_timestamp]})\s+
 
 # Syslog facility and severity
