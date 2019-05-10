@@ -1,108 +1,114 @@
 {
   "order": 0,
-  "version": 2018010801,
-  "template": "syslog-*",
+  "version": 10100,
+  "template": "syslog-1.1.0-*",
   "settings": {
     "index": {
-      "number_of_shards": 2,
+      "number_of_shards": 3,
       "number_of_replicas": 1,
-      "refresh_interval": "5s",
+      "refresh_interval": "10s",
       "codec": "best_compression"
     }
   },
   "mappings": {
-    "_default_": {
-      "numeric_detection": true,
-      "dynamic_templates": [
-        {
-          "string_fields": {
-            "mapping": {
-              "norms": false,
-              "type": "keyword"
-            },
-            "match_mapping_type": "string",
-            "match": "*"
+    "numeric_detection": true,
+    "dynamic_templates": [
+      {
+        "string_fields": {
+          "mapping": {
+            "norms": false,
+            "type": "keyword"
+          },
+          "match_mapping_type": "string",
+          "match": "*"
+        }
+      }
+    ],
+    "properties": {
+      "@timestamp": {
+        "type": "date"
+      },
+      "@version": {
+        "type": "keyword"
+      },
+      "event": {
+        "dynamic": true,
+        "type": "object",
+        "properties": {
+          "host": {
+            "type": "keyword"
+          },
+          "message": {
+            "type": "text"
+          },
+          "subtype": {
+            "type": "keyword"
+          },
+          "type": {
+            "type": "keyword"
           }
         }
-      ],
-      "properties": {
-        "@timestamp": {
-          "type": "date"
-        },
-        "@version": {
-          "type": "keyword"
-        },
-        "event": {
-          "dynamic": true,
-          "type": "object",
-          "properties": {
-            "host": {
-              "type": "keyword"
-            },
-            "message": {
-              "type": "text"
-            },
-            "type": {
-              "type": "keyword"
-            }
+      },
+      "log": {
+        "dynamic": true,
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "keyword"
+          },
+          "pid": {
+            "type": "integer"
+          },
+          "process": {
+            "type": "keyword"
+          },
+          "severity": {
+            "type": "keyword"
+          },
+          "tags": {
+            "type": "keyword"
           }
-        },
-        "log": {
-          "dynamic": true,
-          "type": "object",
-          "properties": {
-            "message": {
-              "type": "keyword"
-            },
-            "pid": {
-              "type": "integer"
-            },
-            "process": {
-              "type": "keyword"
-            },
-            "severity": {
-              "type": "keyword"
-            }
+        }
+      },
+      "node": {
+        "dynamic": true,
+        "type": "object",
+        "properties": {
+          "ipaddr": {
+            "type": "ip"
+          },
+          "hostname": {
+            "type": "keyword"
           }
-        },
-        "node": {
-          "dynamic": true,
-          "type": "object",
-          "properties": {
-            "ipaddr": {
-              "type": "ip"
-            },
-            "hostname": {
-              "type": "keyword"
-            }
-          }
-        },
-        "syslog": {
-          "dynamic": true,
-          "type": "object",
-          "properties": {
-            "facility": {
-              "type": "keyword"
-            },
-            "facility_code": {
-              "type": "integer"
-            },
-            "pri": {
-              "type": "integer"
-            },
-            "severity": {
-              "type": "keyword"
-            },
-            "severity_code": {
-              "type": "integer"
-            },
-            "timestamp": {
-              "type": "date"
-            }
+        }
+      },
+      "syslog": {
+        "dynamic": true,
+        "type": "object",
+        "properties": {
+          "facility": {
+            "type": "keyword"
+          },
+          "facility_code": {
+            "type": "integer"
+          },
+          "pri": {
+            "type": "integer"
+          },
+          "severity": {
+            "type": "keyword"
+          },
+          "severity_code": {
+            "type": "integer"
+          },
+          "timestamp": {
+            "type": "date"
+          },
+          "version": {
+            "type": "integer"
           }
         }
       }
     }
-  },
-  "aliases": {}
+  }
 }
