@@ -1,0 +1,36 @@
+#------------------------------------------------------------------------------
+# Copyright (C)2019 Robert Cowart
+# 
+# The contents of this file and/or repository are subject to the Robert Cowart
+# Public License (the "License") and may not be used or distributed except in
+# compliance with the License. You may obtain a copy of the License at:
+# 
+# http://www.koiossian.com/public/robert_cowart_public_license.txt
+# 
+# Software distributed under the License is distributed on an "AS IS" basis,
+# WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License for
+# the specific language governing rights and limitations under the License.
+# 
+# The Original Source Code was developed by Robert Cowart. Portions created by
+# Robert Cowart are Copyright (C)2019 Robert Cowart. All Rights Reserved.
+#------------------------------------------------------------------------------
+
+input {
+  # Listen on TCP/514 for syslog messages.
+  tcp {
+    host => "${SYNLITE_SYSLOG_TCP_IPV6_HOST:[::]}"
+    port => "${SYNLITE_SYSLOG_TCP_IPV6_PORT:50514}"
+    dns_reverse_lookup_enabled => "false"
+    type => "syslog"
+  }
+
+  # Listen on UDP/514 for syslog messages.
+  udp {
+    host => "${SYNLITE_SYSLOG_UDP_IPV6_HOST:[::]}"
+    port => "${SYNLITE_SYSLOG_UDP_IPV6_PORT:50514}"
+    workers => "${SYNLITE_SYSLOG_UDP_WORKERS:4}"
+    queue_size => "${SYNLITE_SYSLOG_UDP_QUEUE_SIZE:2048}"
+    receive_buffer_bytes => "${SYNLITE_SYSLOG_UDP_RCV_BUFF:33554432}"
+    type => "syslog"
+  }
+}
