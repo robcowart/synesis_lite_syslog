@@ -6,7 +6,6 @@ sýnesis&trade; Lite for Syslog provides basic log analytics for syslog messages
 
 ![synesis_lite_syslog](https://user-images.githubusercontent.com/10326954/57570754-b7463180-7405-11e9-8dfb-f0323f072d9b.png)
 
-
 ## Getting Started
 
 sýnesis&trade; Lite for Syslog is built using the Elastic Stack, including Elasticsearch, Logstash and Kibana. Please refer to [INSTALL.md](https://github.com/robcowart/synesis_lite_syslog/blob/master/INSTALL.md) for instructions on how to install and configure sýnesis&trade; Lite for Syslog.

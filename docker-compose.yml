@@ -61,7 +61,7 @@ services:
 
       ELASTICSEARCH_URL: "http://127.0.0.1:9200"
 
-      KIBANA_DEFAULTAPPID: "dashboard/653cf1e0-2fd2-11e7-99ed-49759aed30f5"
+      KIBANA_DEFAULTAPPID: "dashboard/ec85a1c0-73e0-11e9-b45b-85d6db7c0cfc"
 
       LOGGING_QUIET: 'true'
 

@@ -25,7 +25,7 @@ While the provided defaults should allow you to get up and running quickly, you 
 
 ## Start the Elastic Stack using docker-compose
 
-Start the Elastic Stack (incl. Logstash with the ElastiFlow pipeline) using `docker-compose`.
+Start the Elastic Stack (incl. Logstash with the sýnesis&trade; Lite for Syslog pipeline) using `docker-compose`.
 
 From the path where you placed the `docker-compose.yml` file run:
 
